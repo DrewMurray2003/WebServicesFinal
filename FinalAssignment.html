@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Drew Murray</title>
+</head>
+
+<body>
+        <div id="spinner-overlay" class="spinner-overlay"></div>
+        <div id="spinner" class="spinner"></div>
+        <header>
+                <div id="pokemon" class="tabcontent">
+                        <h1>Pokémon</h1>
+                        <p>Here you can search by name, and type!</p>
+                </div>
+
+                <div id="ability" class="tabcontent">
+                        <h1>Abilities</h1>
+                        <p>Here you can query the API using the First, Prev, Next, and Last buttons!</p>
+                </div>
+
+                <div id="move" class="tabcontent">
+                        <h1>Moves</h1>
+                        <p>Here you can search by type, and battle class!</p>
+                </div>
+
+                <button class="tablink" onclick="changeDataType('pokemon', this, '#cc3535')"
+                        id="defaultType">Pokémon</button>
+                <button class="tablink" onclick="changeDataType('ability', this, '#2d3c9c')">Abilities</button>
+                <button class="tablink" onclick="changeDataType('move', this, '#368536')">Moves</button>
+        </header>
+
+        <div id="pokemonBody" class="body-content">
+                <input type="text" id="pokemonSearch" placeholder="Search Pokémon...">
+                <p>Search By Type:</p>
+                <div class="typeButtons">
+                        <button class="typeButton" onclick="selectType('normal')"><img id="normal"
+                                        src="images/normal.png" alt="Normal" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('fire')"><img id="fire" src="images/fire.png"
+                                        alt="Fire" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('water')"><img id="water" src="images/water.png"
+                                        alt="Water" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('electric')"><img id="electric"
+                                        src="images/electric.png" alt="Electric" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('grass')"><img id="grass" src="images/grass.png"
+                                        alt="Grass" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('ice')"><img id="ice" src="images/ice.png"
+                                        alt="Ice" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('fighting')"><img id="fighting"
+                                        src="images/fighting.png" alt="Fighting" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('poison')"><img id="poison"
+                                        src="images/poison.png" alt="Poison" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('ground')"><img id="ground"
+                                        src="images/ground.png" alt="Ground" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('flying')"><img id="flying"
+                                        src="images/flying.png" alt="Flying" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('psychic')"><img id="psychic"
+                                        src="images/psychic.png" alt="Psychic" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('bug')"><img id="bug" src="images/bug.png"
+                                        alt="Bug" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('rock')"><img id="rock" src="images/rock.png"
+                                        alt="Rock" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('ghost')"><img id="ghost" src="images/ghost.png"
+                                        alt="Ghost" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('dragon')"><img id="dragon"
+                                        src="images/dragon.png" alt="Dragon" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('dark')"><img id="dark" src="images/dark.png"
+                                        alt="Dark" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('steel')"><img id="steel" src="images/steel.png"
+                                        alt="Steel" class="typeButtonImg"></button>
+                        <button class="typeButton" onclick="selectType('fairy')"><img id="fairy" src="images/fairy.png"
+                                        alt="Fairy" class="typeButtonImg"></button>
+                </div>
+                <div id="pokemonCards"></div>
+                <p id="pokeNumResults">Showing 0 Results of 0</p>
+                <p id="pokePageNum">Page 0 of 0</p>
+                <button id="pokemonFirst" onclick="pokemonFirstAction()">First</button>
+                <button id="pokemonPrev" onclick="pokemonPrevAction()">Prev</button>
+                <button id="pokemonNext" onclick="pokemonNextAction()">Next</button>
+                <button id="pokemonLast" onclick="pokemonLastAction()">Last</button>
+        </div>
+        <div id="abilityBody" class="body-content">
+                <table id="abilityTable" class="ability-table"></table>
+                <p id="numResults">Showing 0 Results of 0</p>
+                <p id="pageNum">Page 0 of 0</p>
+                <button id="abilityFirst" onclick="abilityFirstAction()">First</button>
+                <button id="abilityPrev" onclick="abilityPrevAction()">Prev</button>
+                <button id="abilityNext" onclick="abilityNextAction()">Next</button>
+                <button id="abilityLast" onclick="abilityLastAction()">Last</button>
+        </div>
+        <div id="moveBody" class="body-content">
+                <table id="moveTable" class="moves-table"></table>
+                <p id="moveNumResults">Showing 0 Results of 0</p>
+                <p id="movePageNum">Page 0 of 0</p>
+                <button id="moveFirst" onclick="moveFirstAction()">First</button>
+                <button id="movePrev" onclick="movePrevAction()">Prev</button>
+                <button id="moveNext" onclick="moveNextAction()">Next</button>
+                <button id="moveLast" onclick="moveLastAction()">Last</button>
+        </div>
+
+        <script src="js/script.js"></script>
+
+</body>
+
+</html>
